@@ -8,8 +8,7 @@ const { User } = require("../../db/models");
 class AuthenticationError extends Error {
   constructor() {
     super("Unauthorized");
-
-    // Maintains proper stack trace for where our error was thrown (only available on V8)
+    
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, AuthenticationError);
     }

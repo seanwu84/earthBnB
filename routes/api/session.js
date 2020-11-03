@@ -37,7 +37,7 @@ router.put(
     if (user) {
       const token = await generateToken(user);
       res.cookie("token", token, {
-        maxAge: expiresIn * 1000, // maxAge in milliseconds
+        maxAge: expiresIn * 1000, 
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
       });
